@@ -1,0 +1,13 @@
+goctl常用命令
+
+根据sql文件生成model
+goctl model mysql ddl -c -src book.sql -dir .
+
+根据pro生成rpc
+goctl rpc proto -src check.proto -dir .
+
+根据pro生成api网关
+goctl api go -api bookstore.api -dir .
+
+生成pro模板
+goctl rpc template -o check.proto
