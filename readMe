@@ -1,3 +1,5 @@
+mysql,redis,etcd  都使用brew安装 碰到报错的时候，需要 sudo mount -uw /
+
 goctl常用命令
 
 根据sql文件生成model

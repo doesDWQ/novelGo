@@ -5,7 +5,7 @@ Etcd:
   - 127.0.0.1:2379
   Key: user.rpc
 
-DataSource: root:root@tcp(localhost:3306)/novel
+DataSource: root:@tcp(localhost:3306)/novel
 Table: user
 Cache:
   - Host: localhost:6379
