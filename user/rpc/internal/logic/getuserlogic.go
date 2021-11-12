@@ -28,6 +28,6 @@ func (l *GetUserLogic) GetUser(in *user.IdRequest) (*user.UserResponse, error) {
 
 	return &user.UserResponse{
 		Id: "1",
-		Name: "dwq",
+		Name: "dwq33",
 	}, nil
 }

@@ -1,0 +1,5 @@
+[program:userrpc]
+directory=./user/rpc                    # 设置应用程序工作日志
+command=go run user.go -f etc/user.yaml # 运行程序
+redirect_stderr = true                  # 将错误日志重定向到正确日志中
+stdout_logfile=./logs/userRpc.log       # 运行日志相对于当前程序的运行位置
