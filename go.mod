@@ -4,11 +4,10 @@ go 1.17
 
 require (
 	github.com/golang/protobuf v1.5.2
+	github.com/tal-tech/go-queue v1.0.7
 	github.com/tal-tech/go-zero v1.2.2
 	google.golang.org/grpc v1.41.0
-)
-
-require (
+	github.com/beanstalkd/go-beanstalk v0.1.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.1 // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect

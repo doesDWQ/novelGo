@@ -3,4 +3,4 @@
 logs
 supervisor/log
 supervisor/pid
-
+supervisor/*.sock
