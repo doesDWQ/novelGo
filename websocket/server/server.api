@@ -1,0 +1,12 @@
+type Request {
+	Token string `path:"token"`
+}
+
+type Response {
+	Message string `json:"message"`
+}
+
+service server-api {
+	@handler ServerHandler
+	get /ws/:token(Request) returns (Response);
+}
