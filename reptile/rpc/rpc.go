@@ -2,42 +2,35 @@ package main
 
 import (
 	"flag"
-	"fmt"
-
-	"novel/reptile/rpc/internal/config"
-	"novel/reptile/rpc/internal/server"
-	"novel/reptile/rpc/internal/svc"
-	"novel/reptile/rpc/rpc"
-
-	"github.com/tal-tech/go-zero/core/conf"
-	"github.com/tal-tech/go-zero/core/service"
-	"github.com/tal-tech/go-zero/zrpc"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
+	"novel/projectUtil"
+	"novel/reptile/rpc/util"
 )
 
-var configFile = flag.String("f", "etc/rpc.yaml", "the config file")
+// var configFile = flag.String("f", "etc/rpc.yaml", "the config file")
+
+var log = projectUtil.GetFileLog()
 
 func main() {
 	flag.Parse()
 
-	var c config.Config
-	conf.MustLoad(*configFile, &c)
-	ctx := svc.NewServiceContext(c)
-	srv := server.NewRpcServer(ctx)
+	// 加载配置文件
+	// var c config.Config
+	// conf.MustLoad(*configFile, &c)
+	// ctx := svc.NewServiceContext(c)
 
-	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
-		rpc.RegisterRpcServer(grpcServer, srv)
+	// logx.Info("hello")
 
-		switch c.Mode {
-		case service.DevMode, service.TestMode:
-			reflection.Register(grpcServer)
-		default:
-		}
+	log.Info(GetMenu())
 
-	})
-	defer s.Stop()
+}
 
-	fmt.Printf("Starting rpc server at %s...\n", c.ListenOn)
-	s.Start()
+// GetMenu 获取到菜单
+func GetMenu() (data string) {
+	data, err := util.HttpGet("https://www.xbiquge.la/?hpprotid=2a8031d1")
+
+	if err != nil {
+		panic(err)
+	}
+
+	return
 }

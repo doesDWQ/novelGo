@@ -1,7 +1,9 @@
 package config
 
-import "github.com/tal-tech/go-zero/zrpc"
+import (
+	"github.com/tal-tech/go-zero/core/logx"
+)
 
 type Config struct {
-	zrpc.RpcServerConf
+	Log logx.LogConf
 }
