@@ -51,6 +51,7 @@ type Client struct {
 	send chan []byte
 }
 
+// 读消息的函数
 // readPump pumps messages from the websocket connection to the hub.
 //
 // The application runs readPump in a per-connection goroutine. The application
@@ -77,6 +78,7 @@ func (c *Client) readPump() {
 	}
 }
 
+// 写消息的函数
 // writePump pumps messages from the hub to the websocket connection.
 //
 // A goroutine running writePump is started for each connection. The
@@ -124,7 +126,7 @@ func (c *Client) writePump() {
 	}
 }
 
-// ServeWs handles websocket requests from the peer.
+// ServeWs handles websocket requests from the peer.   websocket服务器
 func ServeWs(hub *Hub, w http.ResponseWriter, r *http.Request, ctx *svc.ServiceContext) {
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -137,10 +139,10 @@ func ServeWs(hub *Hub, w http.ResponseWriter, r *http.Request, ctx *svc.ServiceC
 		conn: conn,
 		send: make(chan []byte, bufSize),
 	}
-	client.hub.register <- client
+	client.hub.register <- client // 标注客户上线了
 
 	// Allow collection of memory referenced by the caller by doing all work in
 	// new goroutines.
-	go client.writePump()
-	go client.readPump()
+	go client.writePump() // 写消息函数
+	go client.readPump()  // 读消息函数
 }

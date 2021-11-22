@@ -28,14 +28,14 @@ func NewHub() *Hub {
 func (h *Hub) Run() {
 	for {
 		select {
-		case client := <-h.register:
+		case client := <-h.register: // 注册客户上线
 			h.clients[client] = true
-		case client := <-h.unregister:
+		case client := <-h.unregister: // 注册客户下线
 			if _, ok := h.clients[client]; ok {
 				delete(h.clients, client)
 				close(client.send)
 			}
-		case message := <-h.broadcast:
+		case message := <-h.broadcast: // 发送广播消息
 			for client := range h.clients {
 				select {
 				case client.send <- message:

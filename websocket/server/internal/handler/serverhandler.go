@@ -9,16 +9,18 @@ import (
 	"github.com/tal-tech/go-zero/rest/httpx"
 )
 
+var WsHub = ws.NewHub()
+
 func ServerHandler(ctx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var req types.Request
+
+		// 解析request
 		if err := httpx.Parse(r, &req); err != nil {
 			httpx.Error(w, err)
 			return
 		}
 
-		wsHub := ws.NewHub()
-		go wsHub.Run()
-		ws.ServeWs(wsHub, w, r, ctx)
+		ws.ServeWs(WsHub, w, r, ctx)
 	}
 }

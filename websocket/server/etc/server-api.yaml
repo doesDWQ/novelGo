@@ -1,5 +1,6 @@
 Name: server-api
 Host: 0.0.0.0
 Port: 8890
-MaxConns: 0
-MaxBytes: 0
+MaxConns: 0   # 需要针对不同的配置做压测
+MaxBytes: 0   # 设置最大传输量
+Timeout: 0    # 必须设置为0,否则websocket起不来
