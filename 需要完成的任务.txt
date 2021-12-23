@@ -1,13 +1,17 @@
-1,编写爬虫服务(爬取小说)，核心爬虫功能
-2,集成redis，mysql
-3,分布式锁
+1,编写爬虫服务(爬取小说)，核心爬虫功能  使用gocolly
+2,集成redis，mysql    ignore
+3,分布式锁  框架中有，直接使用
 4,分布式事务
 5，性能压测
 6，单元测试
 7，接口文档 sw
 8, 编写前端渲染页面
 9，部署到k8s
+
 10，分布式配置中心
+https://nacos.io/zh-cn/docs/quick-start.html
+https://github.com/nacos-group/nacos-sdk-go/blob/master/README_CN.md
+
 11，集成消息队列处理异步任务
 12，实现分布式定时任务
 13，接入tidb实现数据库的高可用
@@ -17,8 +21,10 @@
 17，实现实时在线人数统计
 18，管理后台实现
 19,分布式日志收集
-20，接入普罗米修斯监控性能
+20，接入普罗米修斯监控性
 
+21，链路追踪tracing
+https://rocdu.gitbook.io/jaeger-doc-zh/
 
 未来发展方向：
 1，加入区块链技术

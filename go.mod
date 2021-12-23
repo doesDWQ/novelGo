@@ -3,9 +3,11 @@ module novel
 go 1.17
 
 require (
+	github.com/gocolly/colly v1.2.0
 	github.com/golang/protobuf v1.5.2
 	github.com/gorilla/websocket v1.4.2
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
+	github.com/nacos-group/nacos-sdk-go v1.0.9
 	github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 	github.com/sirupsen/logrus v1.6.0
 	github.com/tal-tech/go-queue v1.0.7
@@ -14,29 +16,43 @@ require (
 )
 
 require (
+	github.com/PuerkitoBio/goquery v1.8.0 // indirect
+	github.com/aliyun/alibaba-cloud-sdk-go v1.61.18 // indirect
+	github.com/andybalholm/cascadia v1.3.1 // indirect
+	github.com/antchfx/htmlquery v1.2.4 // indirect
+	github.com/antchfx/xmlquery v1.3.8 // indirect
+	github.com/antchfx/xpath v1.2.0 // indirect
 	github.com/beanstalkd/go-beanstalk v0.1.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
+	github.com/buger/jsonparser v0.0.0-20181115193947-bf1c66bbce23 // indirect
 	github.com/cespare/xxhash/v2 v2.1.1 // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/go-errors/errors v1.0.1 // indirect
 	github.com/go-logr/logr v0.2.0 // indirect
 	github.com/go-redis/redis v6.15.7+incompatible // indirect
 	github.com/go-sql-driver/mysql v1.5.0 // indirect
 	github.com/go-xorm/builder v0.3.4 // indirect
+	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang-jwt/jwt v3.2.1+incompatible // indirect
+	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/mock v1.4.3 // indirect
 	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/google/gofuzz v1.1.0 // indirect
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/googleapis/gnostic v0.4.1 // indirect
 	github.com/hashicorp/golang-lru v0.5.1 // indirect
+	github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af // indirect
 	github.com/jonboulle/clockwork v0.2.2 // indirect
 	github.com/json-iterator/go v1.1.11 // indirect
 	github.com/justinas/alice v1.2.0 // indirect
+	github.com/kennygrant/sanitize v1.2.4 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.3 // indirect
 	github.com/lestrrat-go/strftime v1.0.5 // indirect
+	github.com/lestrrat/go-file-rotatelogs v0.0.0-20180223000712-d3151e2a480f // indirect
+	github.com/lestrrat/go-strftime v0.0.0-20180220042222-ba3bf9c1d042 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
@@ -46,7 +62,10 @@ require (
 	github.com/prometheus/client_model v0.2.0 // indirect
 	github.com/prometheus/common v0.26.0 // indirect
 	github.com/prometheus/procfs v0.6.0 // indirect
+	github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
+	github.com/temoto/robotstxt v1.1.2 // indirect
+	github.com/toolkits/concurrent v0.0.0-20150624120057-a4371d70e3e3 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.0 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.0 // indirect
 	go.etcd.io/etcd/client/v3 v3.5.0 // indirect
@@ -72,6 +91,7 @@ require (
 	google.golang.org/genproto v0.0.0-20210928142010-c7af6a1a74c9 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
+	gopkg.in/ini.v1 v1.42.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	k8s.io/api v0.20.10 // indirect
 	k8s.io/apimachinery v0.20.10 // indirect
